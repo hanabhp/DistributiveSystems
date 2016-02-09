@@ -1,7 +1,7 @@
 first compile from Chat folder execute ./make.sh
 
 then source by executing ./source.sh and copying output in next command :
-export $CLASSPATH=<Paste here>
+export CLASSPATH=<Paste here>
 
 execute :
 rmiregistry &
