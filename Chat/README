@@ -1,0 +1,25 @@
+first compile from Chat folder execute ./make.sh
+
+then source by executing ./source.sh and copying output in next command :
+export $CLASSPATH=<Paste here>
+
+execute :
+rmiregistry &
+java ChatServer
+
+in another terminal source again ./source.sh
+java ChatClient localhost
+
+
+Chat files :
+
+in src
+Server side :
+       ChatServer.java   -> main of server
+       Chat.java         -> Chat interface
+       ChatImpl.java     -> Chat implem
+
+Client side :
+       Client.java       -> Client interface
+       ClientImpl.java   -> Client implem
+       ChatClient.java   -> Client main
