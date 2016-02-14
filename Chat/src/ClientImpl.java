@@ -3,7 +3,7 @@ import java.rmi.RemoteException;
 public class ClientImpl implements Client {
 
     String name;
-    
+
     ClientImpl(){
 	name = new String();
     }
