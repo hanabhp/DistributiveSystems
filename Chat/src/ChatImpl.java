@@ -12,7 +12,7 @@ public class ChatImpl implements Chat {
     public void connect(Client client){
 	clientList.add(client);
 	for (int i = 0; i < clientList.size(); i++){
-	    try {clientList.get(i).print("added");}
+	    try {clientList.get(i).print("added",client.getName());}
 	    catch (Exception e){
 	    }
 	}
@@ -20,16 +20,16 @@ public class ChatImpl implements Chat {
     
     public void disconnect(Client client){
 	for (int i = 0; i < clientList.size(); i++){
-	    try {clientList.get(i).print("disconnected");}
+	    try {clientList.get(i).print("disconnected", client.getName());}
 	    catch (Exception e) {
 	    }
 	}
 	clientList.remove(client);
     }
 
-    public void sendMessage(String msg){
+    public void sendMessage(String msg, String name){
 	for (int i = 0; i < clientList.size(); i++){
-	    try {clientList.get(i).print(msg);}
+	    try {clientList.get(i).print(msg, name);}
 	    catch (Exception e) {
 
 	    }

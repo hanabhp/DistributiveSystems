@@ -7,6 +7,6 @@ public interface Chat extends Remote{
     
     public void disconnect(Client client) throws RemoteException;
 
-    public void sendMessage(String msg) throws RemoteException;
+    public void sendMessage(String msg, String name) throws RemoteException;
 		
 }

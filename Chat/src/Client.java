@@ -3,5 +3,7 @@ import java.rmi.RemoteException;
 
 public interface Client extends Remote{
 
-    public void print(String msg) throws RemoteException;	
+    public String getName() throws RemoteException;
+
+    public void print(String msg, String name) throws RemoteException;	
 }
