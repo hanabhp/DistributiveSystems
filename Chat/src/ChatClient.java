@@ -1,6 +1,10 @@
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+// import java.io.BufferedReader;
+// import java.io.IOException;
+// import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class ChatClient {
 
@@ -20,6 +24,23 @@ public class ChatClient {
 			
 			h.connect(hC_stub);
 			h.sendMessage("hello world");
+			
+			String inputString = new String();
+		        Scanner in = new Scanner(System.in);
+			
+			while (!inputString.contentEquals("quit")){
+			    // try{
+			    // 	BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+			    // 	inputString = bufferRead.readLine();
+			    // 	h.sendMessage(inputString);
+			    // }
+			    // catch(IOException e)
+			    // 	{
+			    // 	    e.printStackTrace();
+			    // 	}
+			    inputString = in.nextLine();
+			    h.sendMessage(inputString);
+			}
 			h.disconnect(hC_stub);
 
 		} catch (Exception e) {
