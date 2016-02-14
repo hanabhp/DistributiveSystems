@@ -10,6 +10,7 @@ java ChatServer
 in another terminal source again ./source.sh
 java ChatClient localhost
 
+The client will be able to send messages until he types "quit" which will disconnect him.
 
 Chat files :
 
