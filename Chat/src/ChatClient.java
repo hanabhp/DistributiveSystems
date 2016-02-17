@@ -29,33 +29,29 @@ public class ChatClient {
 	    System.out.println("Welcome to our public chat, to connect please enter a pseudo");
 	    hC.name = in.nextLine();
 	    
-	        String inputString = new String();
+	    String inputString = new String();
 	    
-	    System.out.println("Print history? (Y/N)");
-	    inputString = in.nextLine();
-	    while (!inputString.contentEquals("N") && (!inputString.contentEquals("Y"))){
-		System.out.println("Please answer by Y for yes, or N for no");
-		inputString = in.nextLine();
-	    }
-	    if (inputString.contentEquals("Y")){
-		FileReader fr = new FileReader("history.txt");
-		BufferedReader br = new BufferedReader(fr);
-		String s;
-		while((s = br.readLine()) != null) {
-		    System.out.println(s);
-		}
-		fr.close();
-	    } 
+	    // System.out.println("Print history? (Y/N)");
+	    // inputString = in.nextLine();
+	    // while (!inputString.contentEquals("N") && (!inputString.contentEquals("Y"))){
+	    // 	System.out.println("Please answer by Y for yes, or N for no");
+	    // 	inputString = in.nextLine();
+	    // }
+	    // if (inputString.contentEquals("Y")){
+		
+	    // }
+	    
 	
 
 	    h.connect(hC_stub);
-				    
+
+	    		    
 	    while (!inputString.contentEquals("quit")){
 		inputString = in.nextLine();
 		h.sendMessage(inputString, hC.name);
 	    }
 	    h.disconnect(hC_stub);
-	    
+	    System.exit(0);
 	} catch (Exception e) {
 	    System.out.println(" Application Error ");
 	    e.printStackTrace();
